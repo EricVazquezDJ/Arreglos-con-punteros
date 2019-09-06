@@ -45,24 +45,24 @@ int main(){
             for(int i=0;i<=20;i++) apuntador->revista[i]=revista[i];
         system ("CLS");
         }else if(opcion==2){
-            char nombre[42];
+            char nombre[22];
             cout<<"Nombre de la persona: ";
             fflush(stdin);
-            cin.getline(nombre,40);
+            cin.getline(nombre,20);
             apuntador=suscriptor;
             int j,i;
             for(i=0;i<10;i++,apuntador++){
-                for(j=0;j<40;j++){
+                for(j=0;j<20;j++){
                     if(apuntador->nombre[j]!=nombre[j]) break;
                 }
-                if(j==40){
+                if(j==20){
                     apuntador++;
                     for(;i<9;i++,apuntador++){
                         if(apuntador->tiempo==0){
                             suscriptor[i].tiempo=0;
                             break;
                         }
-                        for(int j=0;j<=40;j++) suscriptor[i].nombre[j]=apuntador->nombre[j];
+                        for(int j=0;j<=20;j++) suscriptor[i].nombre[j]=apuntador->nombre[j];
                         suscriptor[i].tiempo=apuntador->tiempo;
                         for(int j=0;j<=20;i++) suscriptor[i].revista[j]=apuntador->revista[j];
                     }
